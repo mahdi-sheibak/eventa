@@ -1,0 +1,12 @@
+{
+  "actions": {
+    "next_day": "روز بعد",
+    "previous_day": "روز قبل"
+  },
+  "footer": {
+    "build_with": "ساخته شده با"
+  },
+  "badge": {
+    "holiday": "تعطیلی رسمی"
+  }
+}

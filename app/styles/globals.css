@@ -1,0 +1,13 @@
+@import "./font.css";
+
+:root {
+  font-family: IRANSans, "Courier New", Courier, monospace;
+}
+
+.rtl-grid {
+  direction: rtl;
+}
+
+.ltr-grid {
+  direction: ltr;
+}
