@@ -14,6 +14,8 @@ useSeoMeta({
   title: `Eventa - ${persianDate.year}/${persianDate.month}/${persianDate.day}`,
   description: "Eventa",
   ogImage: "/logo-white.jpg",
+  twitterImage: "/logo-white.jpg",
+  twitterTitle: "Eventa",
 });
 </script>
 <template>

@@ -3,6 +3,8 @@ useSeoMeta({
   title: "Eventa - امروز",
   description: "Eventa",
   ogImage: "/logo-white.jpg",
+  twitterImage: "/logo-white.jpg",
+  twitterTitle: "Eventa",
 });
 
 const today = new Date();
