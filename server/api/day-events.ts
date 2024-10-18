@@ -20,7 +20,7 @@ const getDayEvents = defineCachedFunction(
       `https://holidayapi.ir/jalali/${year}/${month}/${day}`
     );
     const dayEvents = DayInfoSchema.parse(dayEventsResponse);
-    saveDayInfo(eventKey, dayEvents);
+    await saveDayInfo(eventKey, dayEvents);
     return dayEvents;
   },
   {
