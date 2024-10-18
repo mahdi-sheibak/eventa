@@ -17,7 +17,7 @@ const { nextDay, previousDay } = getDayActionsDate(date);
       }"
     />
     <hr class="w-full" />
-    <RelativeTimeFormat :date="date" />
+    <RelativeTimeFormat :date="date.toString()" />
     <hr class="w-full" />
     <NextDayAction
       :date-info="{

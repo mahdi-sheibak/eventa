@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import { differenceInDays } from "date-fns/differenceInDays";
 interface Props {
-  date: Date;
+  date: string;
 }
 const props = defineProps<Props>();
 const { date } = props;
+const actualDate = new Date(date);
 const currentDate = new Date();
-const differentDay = differenceInDays(date, currentDate);
+const differentDay = differenceInDays(actualDate, currentDate);
+
+console.log({ differentDay, actualDate, currentDate });
 
 const { locale } = useI18n();
 
