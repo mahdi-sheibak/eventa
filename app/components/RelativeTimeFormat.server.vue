@@ -6,10 +6,8 @@ interface Props {
 const props = defineProps<Props>();
 const { date } = props;
 const actualDate = new Date(date);
-const currentDate = new Date();
+const currentDate = new Date(new Date().toUTCString());
 const differentDay = differenceInDays(actualDate, currentDate);
-
-console.log({ differentDay, actualDate, currentDate });
 
 const { locale } = useI18n();
 
