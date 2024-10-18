@@ -4,7 +4,8 @@
     "previous_day": "Previous day"
   },
   "footer": {
-    "build_with": "Build with"
+    "build_with": "Build with",
+    "open_source": "Open Source"
   },
   "badge": {
     "holiday": "Holiday"

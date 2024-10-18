@@ -1,6 +1,8 @@
 <script setup lang="ts">
 useSeoMeta({
   title: "Eventa - امروز",
+  description: "Eventa",
+  ogImage: "/logo-white.jpg",
 });
 
 const today = new Date();
@@ -11,6 +13,8 @@ const persianDate = getPersianDate(today);
   <DayActions :date="today" />
 
   <DayFormattedDate :date="today" />
+
+  <SeasonImage :persian-month="persianDate.month" />
 
   <DayEvents
     :date-info="{

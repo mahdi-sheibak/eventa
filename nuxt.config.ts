@@ -1,5 +1,6 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import glsl from "vite-plugin-glsl";
 
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
@@ -11,6 +12,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@nuxt/icon",
     "@nuxtjs/fontaine",
+    "@nuxt/image",
   ],
   i18n: {
     vueI18n: "./i18n.config.ts",
@@ -37,5 +39,11 @@ export default defineNuxtConfig({
   },
   experimental: {
     componentIslands: true,
+  },
+  nitro: {
+    compressPublicAssets: true,
+  },
+  vite: {
+    plugins: [glsl()],
   },
 });

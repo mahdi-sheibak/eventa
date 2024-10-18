@@ -12,12 +12,16 @@ const persianDate = getPersianDate(currentDate);
 
 useSeoMeta({
   title: `Eventa - ${persianDate.year}/${persianDate.month}/${persianDate.day}`,
+  description: "Eventa",
+  ogImage: "/logo-white.jpg",
 });
 </script>
 <template>
   <DayActions :date="currentDate" />
 
   <DayFormattedDate :date="currentDate" />
+
+  <SeasonImage :persian-month="persianDate.month" />
 
   <DayEvents
     :date-info="{

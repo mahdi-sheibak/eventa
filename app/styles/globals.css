@@ -4,6 +4,11 @@
   font-family: IRANSans, "Courier New", Courier, monospace;
 }
 
+body {
+  color: white;
+  background: gray;
+}
+
 .rtl-grid {
   direction: rtl;
 }

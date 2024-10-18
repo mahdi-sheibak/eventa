@@ -4,7 +4,8 @@
     "previous_day": "روز قبل"
   },
   "footer": {
-    "build_with": "ساخته شده با"
+    "build_with": "ساخته شده با",
+    "open_source": "متن باز"
   },
   "badge": {
     "holiday": "تعطیلی رسمی"

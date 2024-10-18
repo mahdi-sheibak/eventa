@@ -14,6 +14,15 @@ export default <Partial<Config>>{
       fontFamily: {
         sans: ["IRANSans", "IRANSans fallback", ...fontFamily.sans],
       },
+      animation: {
+        fade: "fadeIn .5s ease-in-out",
+      },
+      keyframes: {
+        fadeIn: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+      },
     },
   },
 };

@@ -14,7 +14,7 @@ export default defineI18nConfig(() => ({
   legacy: false,
   locale: defaultLocale,
   messages: {
-    en,
     fa,
+    en,
   },
 }));

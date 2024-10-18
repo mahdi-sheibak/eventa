@@ -1,10 +1,14 @@
 <script setup lang="ts">
-const props = defineProps<{ date: Date }>();
+interface Props {
+  date: Date;
+}
+const props = defineProps<Props>();
 const { date } = props;
+
 const { nextDay, previousDay } = getDayActionsDate(date);
 </script>
 <template>
-  <div class="flex px-5 items-center w-full">
+  <div class="flex items-center w-full">
     <PreviousDayAction
       :date-info="{
         year: previousDay.year,
@@ -13,7 +17,7 @@ const { nextDay, previousDay } = getDayActionsDate(date);
       }"
     />
     <hr class="w-full" />
-    <p class="w-[50%] text-center">تاریخ امروز</p>
+    <RelativeTimeFormat :date="date" />
     <hr class="w-full" />
     <NextDayAction
       :date-info="{

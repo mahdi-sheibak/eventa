@@ -7,7 +7,7 @@ const props = defineProps<Props>();
 const { events } = props;
 </script>
 <template>
-  <div class="text-center px-3">
+  <div class="text-center px-3 animate-fade">
     <template v-for="(event, index) in events">
       <span :class="{ 'text-yellow-700': event.isHoliday }"
         >{{ event.description }}

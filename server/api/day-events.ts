@@ -1,12 +1,12 @@
 import { DateInfoSchema } from "@/schemas/date-info";
 import { DayInfoSchema } from "@/schemas/day-info";
-import { db } from "@/db-layer/events";
+import { getDayInfo, saveDayInfo } from "@/supabase";
 
 const getDayEvents = defineCachedFunction(
   async (year: number, month: number, day: number) => {
     const eventKey = `${year}-${month}-${day}`;
 
-    const dayInfo = await db.getDayInfo(eventKey);
+    const dayInfo = await getDayInfo(eventKey);
 
     if (dayInfo.data) {
       const dbDayEvents = DayInfoSchema.parse({
@@ -20,7 +20,7 @@ const getDayEvents = defineCachedFunction(
       `https://holidayapi.ir/jalali/${year}/${month}/${day}`
     );
     const dayEvents = DayInfoSchema.parse(dayEventsResponse);
-    db.saveDayInfo(eventKey, dayEvents);
+    saveDayInfo(eventKey, dayEvents);
     return dayEvents;
   },
   {
@@ -32,7 +32,7 @@ const getDayEvents = defineCachedFunction(
 
 export default defineCachedEventHandler(
   async (event) => {
-    const params = await getQuery(event);
+    const params = getQuery(event);
     const { year, month, day } = DateInfoSchema.parse(params);
     const dayEvents = await getDayEvents(year, month, day);
 
