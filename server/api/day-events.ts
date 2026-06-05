@@ -1,44 +1,30 @@
 import { DateInfoSchema } from "@/schemas/date-info";
-import { DayInfoSchema } from "@/schemas/day-info";
-import { getDayInfo, saveDayInfo } from "@/supabase";
 
-const getDayEvents = defineCachedFunction(
-  async (year: number, month: number, day: number) => {
-    const eventKey = `${year}-${month}-${day}`;
-
-    const dayInfo = await getDayInfo(eventKey);
-
-    if (dayInfo.data) {
-      const dbDayEvents = DayInfoSchema.parse({
-        is_holiday: dayInfo.data.is_holiday,
-        events: JSON.parse(dayInfo.data.events),
-      });
-      return dbDayEvents;
-    }
-
-    const dayEventsResponse = await $fetch(
-      `https://holidayapi.ir/jalali/${year}/${month}/${day}`
-    );
-    const dayEvents = DayInfoSchema.parse(dayEventsResponse);
-    await saveDayInfo(eventKey, dayEvents);
-    return dayEvents;
-  },
-  {
-    getKey: async (year: number, month: number, day: number) =>
-      `${year}-${month}-${day}`,
-    maxAge: Number.MAX_SAFE_INTEGER,
-  }
-);
+import eventsData from "../events.json";
 
 export default defineCachedEventHandler(
   async (event) => {
     const params = getQuery(event);
-    const { year, month, day } = DateInfoSchema.parse(params);
-    const dayEvents = await getDayEvents(year, month, day);
+    const { month, day } = DateInfoSchema.parse(params);
+
+    const events = eventsData["Persian Calendar"].filter(
+      (event) => event.day === day && event.month === month,
+    );
+
+    const isHoliday = events.some((event) => Boolean(event.holiday));
+    const eventsDay = events.map((event) => ({
+      description: event.title,
+      isHoliday: Boolean(event.holiday),
+    }));
+
+    const dayEvents = {
+      isHoliday,
+      events: eventsDay,
+    };
 
     return dayEvents;
   },
   {
     maxAge: Number.MAX_SAFE_INTEGER,
-  }
+  },
 );

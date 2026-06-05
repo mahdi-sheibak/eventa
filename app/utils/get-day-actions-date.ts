@@ -9,12 +9,10 @@ export const getDayActionsDate = (date: Date) => {
     nextDay: {
       day: nextDay.getDate(),
       month: nextDay.getMonth(),
-      year: nextDay.getFullYear(),
     },
     previousDay: {
       day: previousDay.getDate(),
       month: previousDay.getMonth(),
-      year: previousDay.getFullYear(),
     },
   };
 };

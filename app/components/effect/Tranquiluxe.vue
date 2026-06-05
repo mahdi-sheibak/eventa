@@ -16,10 +16,8 @@ onMounted(() => {
   gl.clearColor(1, 1, 1, 1);
 
   function resize() {
-    const scale = 1;
-    // camera.perspective({
-    //   aspect: gl.canvas.width / gl.canvas.height,
-    // });
+    const scale = 0.999999;
+
     renderer.setSize(ctn.offsetWidth * scale, ctn.offsetHeight * scale);
   }
   window.addEventListener("resize", resize, false);
@@ -37,7 +35,7 @@ onMounted(() => {
         value: new Color(
           gl.canvas.width,
           gl.canvas.height,
-          gl.canvas.width / gl.canvas.height
+          gl.canvas.width / gl.canvas.height,
         ),
       },
     },
@@ -62,7 +60,7 @@ onMounted(() => {
   return () => {
     cancelAnimationFrame(animateId);
     window.removeEventListener("resize", resize);
-    ctn.removeChild(gl.canvas);
+    gl.canvas.remove();
     gl.getExtension("WEBGL_lose_context")?.loseContext();
   };
 });

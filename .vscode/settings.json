@@ -1,5 +1,4 @@
 {
-  "i18n-ally.localesPaths": [
-    "messages"
-  ]
+  "js/ts.tsdk.path": "node_modules\\typescript\\lib",
+  "cSpell.words": ["eventa"]
 }

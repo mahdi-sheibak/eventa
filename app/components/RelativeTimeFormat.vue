@@ -9,9 +9,7 @@ const actualDate = new Date(date);
 const currentDate = new Date(new Date().toUTCString());
 const differentDay = differenceInDays(actualDate, currentDate);
 
-const { locale } = useI18n();
-
-const localeFormatter = locale.value === "en" ? "en" : "fa-IR";
+const localeFormatter = "fa-IR";
 const relativeTimeFormat = new Intl.RelativeTimeFormat(localeFormatter, {
   localeMatcher: "best fit", // options: “lookup”, “best fit”
   numeric: "auto", // options: “auto”, “always”

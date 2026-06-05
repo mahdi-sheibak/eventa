@@ -4,9 +4,9 @@ interface Props {
   dateInfo: DateInfo;
 }
 const props = defineProps<Props>();
-const { year, month, day } = props.dateInfo;
+const { month, day } = props.dateInfo;
 
-const { dayInfo } = await useDayInfo({ year, month, day });
+const { dayInfo } = await useDayInfo({ month, day });
 </script>
 
 <template>

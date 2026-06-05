@@ -12,15 +12,12 @@ const today = new Date();
 const persianDate = getPersianDate(today);
 </script>
 <template>
-  <DayActions :date="today" />
-
   <DayFormattedDate :date="today" />
 
   <SeasonImage :persian-month="persianDate.month" />
 
   <DayEvents
     :date-info="{
-      year: persianDate.year,
       month: persianDate.month,
       day: persianDate.day,
     }"

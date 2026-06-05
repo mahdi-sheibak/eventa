@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@import "./font.css";
+
+@theme {
+  --breakpoint-mobile: 560px;
+  --breakpoint-tablet: 760px;
+  --breakpoint-desktop: 960px;
+  --breakpoint-wide: 1370px;
+
+  --font-sans: "IRANSans", "IRANSans fallback", sans-serif;
+
+  --animate-fade: fadeIn 0.5s ease-in-out;
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+:root {
+  font-family: IRANSans, "Courier New", Courier, monospace;
+}
+
+body {
+  color: white;
+  background: #5c5c5c;
+}
+
+.rtl-grid {
+  direction: rtl;
+}
+
+.ltr-grid {
+  direction: ltr;
+}

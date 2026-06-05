@@ -1,12 +1,8 @@
 <script setup lang="ts">
-import "./styles/globals.css";
-
-const { locale } = useI18n();
-
 useHead({
   htmlAttrs: {
-    lang: locale.value,
-    dir: locale.value === "fa" ? "rtl" : "ltr",
+    lang: "fa",
+    dir: "rtl",
   },
 });
 </script>

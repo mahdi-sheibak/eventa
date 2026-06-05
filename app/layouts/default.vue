@@ -5,7 +5,7 @@
       class="flex flex-col items-center desktop:w-[50%] tablet:w-[70%] mobile:w-[90%] justify-center z-10"
     >
       <div
-        class="flex flex-col gap-4 p-3 rounded-lg backdrop-blur-2xl mx-2 tablet:min-w-[500px]"
+        class="flex flex-col gap-4 p-3 rounded-lg backdrop-blur-2xl mx-2 tablet:min-w-125"
       >
         <slot />
       </div>

@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import type { DateInfo } from "@/types";
+import messages from "~/messages/fa.json";
+
 interface Props {
   dateInfo: DateInfo;
 }
 const props = defineProps<Props>();
-const { year, month, day } = props.dateInfo;
+const { month, day } = props.dateInfo;
 </script>
 <template>
-  <NuxtLinkLocale :href="`/~/${year}/${month}/${day}`" class="btn">
-    {{ $t("actions.next_day") }}
+  <NuxtLink :href="`/~/${month}/${day}`" class="btn">
+    {{ messages.actions.nextDay }}
     <Icon name="hugeicons:arrow-left-01" size="20" class="ltr:rotate-180" />
-  </NuxtLinkLocale>
+  </NuxtLink>
 </template>

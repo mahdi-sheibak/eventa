@@ -1,40 +1,20 @@
 import glsl from "vite-plugin-glsl";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2024-04-03",
+  compatibilityDate: "2026-06-05",
   devtools: { enabled: true },
   future: {
     compatibilityVersion: 4,
   },
-  modules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/i18n",
-    "@nuxt/icon",
-    "@nuxtjs/fontaine",
-    "@nuxt/image",
-  ],
-  i18n: {
-    vueI18n: "./i18n.config.ts",
-    locales: ["fa", "en"],
-    defaultLocale: "fa",
-    strategy: "prefix_and_default",
-  },
+  modules: ["@nuxt/icon", "@nuxtjs/fontaine", "@nuxt/image"],
   routeRules: {
     "/": {
       ssr: true,
     },
-    "/~": {
-      redirect: "/today",
-    },
-    "/*/~": {
-      redirect: "/today",
-    },
-    "/~/**": {
-      isr: true,
-    },
-    "/*/~/**": {
-      isr: true,
+    "/today": {
+      ssr: true,
     },
   },
   experimental: {
@@ -44,6 +24,7 @@ export default defineNuxtConfig({
     compressPublicAssets: true,
   },
   vite: {
-    plugins: [glsl()],
+    plugins: [glsl(), tailwindcss() as any],
   },
+  css: ["./app/styles/main.css"],
 });

@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "nextDay": "روز بعد",
+    "previousDay": "روز قبل"
+  },
+  "footer": {
+    "buildWith": "ساخته شده با",
+    "openSource": "متن باز"
+  },
+  "badge": {
+    "holiday": "تعطیلی رسمی"
+  }
+}
