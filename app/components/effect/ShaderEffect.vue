@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
-import vert from "./tranquiluxe-vert.glsl";
-import frag from "./tranquiluxe-frag.glsl";
+import vert from "./effect.vert.glsl";
+import frag from "./effect.frag.glsl";
 
 const ctnDom = useTemplateRef("ctnDom");
 
@@ -13,6 +13,7 @@ onMounted(() => {
   const ctn = ctnDom.value;
   const renderer = new Renderer();
   const gl = renderer.gl;
+  gl.canvas.getContext("webgl2");
   gl.clearColor(1, 1, 1, 1);
 
   function resize() {

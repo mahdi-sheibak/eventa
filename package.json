@@ -8,13 +8,13 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "knip": "knip"
   },
   "dependencies": {
     "@nuxt/image": "2.0.0",
     "@nuxtjs/fontaine": "0.5.0",
     "@tailwindcss/vite": "^4.3.0",
-    "date-fns": "4.4.0",
     "nuxt": "4.4.7",
     "ogl": "1.0.11",
     "tailwindcss": "4.3.0",
@@ -25,7 +25,9 @@
   "devDependencies": {
     "@iconify-json/hugeicons": "1.2.29",
     "@nuxt/icon": "2.2.3",
+    "@types/node": "^25.9.1",
     "daisyui": "5.5.20",
+    "knip": "^6.15.0",
     "typescript": "6.0.3",
     "vite-plugin-glsl": "1.6.0"
   },

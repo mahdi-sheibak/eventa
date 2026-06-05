@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import type { Event } from "@/schemas/day-info";
+type Event = {
+  description: string;
+  isHoliday: boolean;
+};
 interface Props {
   events?: Event[];
 }

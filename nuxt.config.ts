@@ -25,6 +25,9 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [glsl(), tailwindcss() as any],
+    optimizeDeps: {
+      include: ["ogl"],
+    },
   },
   css: ["./app/styles/main.css"],
 });
